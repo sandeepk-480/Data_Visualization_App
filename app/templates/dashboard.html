@@ -1,0 +1,60 @@
+{% extends 'navi.html' %}
+{% block title %}Dashboard{% endblock  %}
+{% block head %}
+<script src="/static/js/cdn.js"></script>
+{% endblock  %}
+
+ 
+
+{% block body %}
+<h1 style="text-align: center;"><u>List of Charts</u></h1>
+
+<form action="/home/" method="get">
+    <label for="num_records">Number of Records:</label>
+    <input type="number" name="num_records" id="num_records" value="{{num_records}}">
+    <button type="submit">Apply</button>
+</form><br><br>
+
+<div class="flex-container">
+    <div class="chart-container" style="position: relative; height:70vh; width:90vw;">
+        <p><i><u>This charts Shows the average intensity and likelihood on the basis of topic</u></i></p>
+        <canvas id="averageChart"></canvas>
+        <script> var avgData = {{ avg_data|safe }}; </script>
+    </div>
+
+
+    <div class="chart-container" style="position: relative; height:70vh; width:90vw">
+        <p><i><u>This chart shows the most discussed topic according to the data</u></i></p>
+        <canvas id="mychart"></canvas>
+        <script>var topics_json = {{ topics|safe }};</script>
+    </div>
+</div>
+
+<br><br><br>
+ 
+
+<div class="flex-container">
+    <div class="chart-container" style="position: relative; height:70vh; width:90vw">
+        <p><i><u>This chart shows the Start_year and End_year on the basis of topics</u></i></p>
+        <canvas id="topicChart" style="display: block; box-sizing: border-box; height: 288px; width: 560px;margin-top: 30px;" width="741" height="370"></canvas>
+        <script>var topicYears = {{ topic_years|safe }};</script>
+    </div>
+
+
+    <div class="chart-container" style="position: relative; height:70vh; width:90vw;">
+        <p><i><u>This chart shows the Start_year and End_year on the basis of sectors</u></i></p>
+        <canvas id="sectorChart" style="display: block; box-sizing: border-box; height: 291px; width: 585px;margin-top: 40px;margin-left: 20px;" width="731" height="365"></canvas>
+        <script>var sectorYears = {{ sector_years|safe }};</script>
+    </div>
+</div>    
+
+
+
+
+<script src="/static/js/chart1.js"></script>
+<script src="/static/js/chart2.js"></script>
+<script src="/static/js/chart3.js"></script>
+<script src="/static/js/topic.js"></script>
+
+{% endblock  %}
+

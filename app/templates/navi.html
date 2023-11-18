@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock  %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    {% block head %}{% endblock  %}
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
+                        <span class="title">Data Visualization</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/home/">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title"><u>Dashboard</u></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/aboutus/">
+                        <span class="icon"><ion-icon name="information-outline"></ion-icon></span>
+                        <span class="title"><u>About us</u></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/contactus/">
+                        <span class="icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>
+                        <span class="title"><u>Contact us</u></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/logout/">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title"><u>Sign Out</u></span>
+                    </a>
+                </li>
+            </ul>  
+        </div>
+        {% comment %} Search {% endcomment %}
+        <div class="main" style="margin-left: 30px;">
+            <div class="topbar">
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search Here" style="border: none; outline: none">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+            </div>
+            {% block body %}{% endblock  %}
+        </div>
+
+
+
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
