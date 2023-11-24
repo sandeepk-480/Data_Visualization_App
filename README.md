@@ -18,7 +18,7 @@ lorem ipsum text.<br><br>
 <b>Contact Us</b><br>
 Created a form with validations, which saves the form to the database.<br><br>
 
-<b>Login/Register</b><br>
+<b>Login/Register Page</b><br>
 User login with authentication, Registering user and saving data to the database.<br>
 
 
