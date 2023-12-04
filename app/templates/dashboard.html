@@ -11,7 +11,7 @@
 
 <form action="/home/" method="get">
     <label for="num_records">Number of Records:</label>
-    <input type="number" name="num_records" id="num_records" value="{{num_records}}">
+    <input type="number" name="num_records" id="num_records" value="{{num_records}}" min="0">
     <button type="submit">Apply</button>
 </form><br><br>
 
@@ -55,6 +55,16 @@
 <script src="/static/js/chart2.js"></script>
 <script src="/static/js/chart3.js"></script>
 <script src="/static/js/topic.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        let a = document.getElementById('num_records')
+        if (parseInt(a.value) < 0){
+            a.value = 0
+        }
+    })
+
+    
+</script>
 
 {% endblock  %}
 
