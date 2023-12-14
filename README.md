@@ -21,6 +21,6 @@ Created a form with validations, which saves the form to the database.<br>
 <b>Login/Register Page</b><br>
 User login with authentication, Registering user and saving data to the database.<br><br>
 
-Note: Use "python manage.py loaddata data.sql" for loading the data.
+Note: Use "python manage.py loaddata data.sql" for loading the database data.
 
 
