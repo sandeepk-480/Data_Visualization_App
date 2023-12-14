@@ -1,8 +1,13 @@
 from django.contrib import admin
 from django.urls import path
 from app import views
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
+
+    #This will redirect to the Dashboard if logged in, or to the login page
+    path("", RedirectView.as_view(url="/home/")),
+
     path('home/', views.dashboard, name='dashboard'),
     path('topic/', views.topic),
 
